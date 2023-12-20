@@ -5,7 +5,6 @@
     <div class="container-xxl flex-grow-1 container-p-y">
        <div class="row">
            <div class="row g-4 mb-4">
-
            </div>
             <!-- Content -->
             {{-- @dump($services->getMedia('service_image')) --}}
