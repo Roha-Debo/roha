@@ -1,0 +1,248 @@
+@media screen and (min-width: 767px) {
+    .uk-button.uk-button-large.uk-button-primary.uk-width-2-10{
+        width: 226px !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .home .header{
+        height: auto;
+    }
+    .block-slides{
+        margin-top: 0;
+    }
+    .block-slide .victor{
+        position: static;
+    }
+    .block-slide{
+        padding: 25px 0 0;
+    }
+    .block-slide .text{
+        padding: 0 39px 25px;
+        font-size: 18px;
+    }
+    .block-slide .text h1{
+        margin-bottom: 25px;
+        font-size: 25px;
+    }
+    .block-offer-des h3,.block-offer-des .list-services-title{
+        display: block;
+    }
+    .list-order-auth >li:first-child{
+        display: block;
+    }
+    .list-services-title{
+        margin: 5px 0;
+    }
+    .block-offer-des h3 a span{
+        display: block;
+        margin-top: 8px;
+    }
+    .block-offer-des h3{
+        font-size: 18px;
+    }
+    input[type='submit'].uk-button.uk-button-large.uk-button-primary.uk-width-2-10,a.back-button{
+        width: 100%;
+    }
+    .ob{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+    .ob .uk-width-medium-7-10{
+        order:2;
+    }
+    .ob .uk-width-medium-3-10{
+        order:1;
+    }
+    .ob .thumb{
+        margin-bottom: 10px;
+    }
+    .list-actions >li{
+        margin-right: -4px;
+    }
+    .block-title h3{
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    .block-q p,.block-title p.desc{
+        text-align: justify;
+    }
+    .block-comment{
+        padding-right: 0;
+    }
+    .block-comment .uk-comment-avatar{
+        position: static;
+    }
+    .table-service-p  .block-avatar .thumb img{
+        width: 74px;
+    }
+    .table-service-p .block-avatar{
+        text-align: center !important;
+    }
+    .list-steps >li{
+        padding: 0 16px;
+    }
+    .uk-container {
+        padding: 0 10px;
+    }
+    .block-details-project {
+        border: none;
+        padding: 0;
+    }
+    .uk-grid {
+        margin-right: -10px;
+    }
+    .uk-grid-divider:not(:empty) {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+    .uk-grid-divider>* {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .uk-grid>* {
+        padding-right: 10px;
+    }
+    .uk-grid-divider>[class*='uk-width-1-']:not(.uk-width-1-1):nth-child(n+2), .uk-grid-divider>[class*='uk-width-2-']:nth-child(n+2), .uk-grid-divider>[class*='uk-width-3-']:nth-child(n+2), .uk-grid-divider>[class*='uk-width-4-']:nth-child(n+2), .uk-grid-divider>[class*='uk-width-5-']:nth-child(n+2), .uk-grid-divider>[class*='uk-width-6-']:nth-child(n+2), .uk-grid-divider>[class*='uk-width-7-']:nth-child(n+2), .uk-grid-divider>[class*='uk-width-8-']:nth-child(n+2), .uk-grid-divider>[class*='uk-width-9-']:nth-child(n+2) {
+        border-right: 0 solid #ddd;
+    }
+    .uk-grid+.uk-grid, .uk-grid-margin, .uk-grid>*>.uk-panel+.uk-panel {
+        margin-top: 10px;
+    }
+    p.desc {
+        margin: 0px 0 6px !important;
+    }
+    .margin-bottom-a {
+        margin-bottom: 10px;
+    }
+    .block-border {
+        padding: 10px;
+    }
+    .uk-accordion-title {
+        margin-bottom: 10px;
+        padding: 5px 0;
+    }
+    .uk-accordion-content {
+        padding: 0 0 0 0;
+    }
+    .list-desc-user {
+        padding-bottom: 0px !important;
+    }
+    h3, .uk-h3 {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .block-q h3 {
+        margin-bottom: 5px;
+        line-height: 22px;
+    }
+    .custom-accordion h3.uk-accordion-title {
+        font-size: 16px;
+    }
+    p {
+        font-size: 12px !important;
+        line-height: 16px !important;
+    }
+    .block-q {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    label {
+        padding: 5px 0;
+        font-size: 14px;
+    }
+    .uk-grid-small+.uk-grid-small, .uk-grid-small>.uk-grid-margin, .uk-grid-small>*>.uk-panel+.uk-panel {
+        margin-top: 5px;
+    }
+    .title-site {
+        font-size: 15px !important;
+    }
+    .border-top {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    h4, .uk-h4 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    #share-buttons a {
+        width: 35px;
+        margin: 0 3px;
+    }
+    .offer_thumb {
+        width: 50px;
+        float: right;
+    }
+    .offer_thumb-block {
+        display: none;
+    }
+    .delete-offer {
+        display: block;
+    }
+    .delete-offer {
+        margin-right: 10px;
+    }
+    .block-av h3.name {
+        font-size: 15px;
+    }
+    .block-title-size span {
+        font-size: 14px !important;
+    }
+}
+@media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
+    table.table-responsive{
+        border: none;
+    }
+    table.table-responsive table,table.table-responsive  thead,table.table-responsive  tbody,table.table-responsive  th,table.table-responsive  td,table.table-responsive  tr {
+        display: block;
+    }
+    table.table-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        right: -9999px;
+    }
+    table.table-responsive tr {
+        border: 1px solid #dbdbdb;
+        margin-bottom: 15px;
+    }
+    table.table-responsive td {
+        border: none;
+        border-bottom: 1px solid #dbdbdb;
+        position: relative;
+        padding-right: 50%;
+    }
+    table.table-responsive td:before {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 45%;
+        padding-left: 10px;
+    }
+    table.table-responsive td:before {
+        content: attr(data-title);
+    }
+    table.table-responsive.table-orders td{
+        padding-right: 40%;
+    }
+    table.table-fav tr td:last-child,.table-service-p tr td:last-child{
+        padding: 10px;
+    }
+    .table-offers span.uk-badge{
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .block-notification .thumb{
+        margin-bottom: 15px;
+    }
+    .block-notification .content-not,.block-notification .thumb{
+        width: 100%;
+    }
+    .block-notification .thumb,.block-notification .content-not{
+        float: none;
+    }
+}

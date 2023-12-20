@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "teb-core",
+  "private_key_id": "75168e1133a999ceb6837e318fd2ad8855ee1ddb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDSW0jKxn8BoNhf\nVQSdOjwZTjXWjGzbRQsYeIu5ZDLBOU8KMlogs2lNapTE8VtzFxVMsenHpR9x9UsS\nHNDeityEQHwSNMt+1bQe/JwnYJ6zCIP+LO2AamDMI9kxcrgZFqDl1a1ZKWyQWv2V\nRSfhd4lJgCWbPvAF6JUSyTGYek5fe+oagwVVheeK0bNYhIz1ZJgM7cmh/yzcugQg\nb9taWbdfz8apnS8bhoxxQDphyg0kaNANXMOBuMRL3MYkMT8LL6OcFVOyKB4BgLFU\nsgmfgnpVZ1NHaLZipFvIqW7fDM83bA9dSiZ1NkmVT2FR5+LhH64XIk64gHykeypb\nxhkDiglJAgMBAAECggEABQos10kkKh8br/vgdpEDm+FQPcCqGUdVwtx4facDCySk\nNbXm1OKXgtaZAZLqwmfYdTins1inRTYbHsJmQ9D0urJrqx//QdSGUl4EaXI/TWZ9\nQe3WfI/ZCY+ZvT1mzb1bw3zBN3RcL6UzAUM9Ccsepw5L6qSxO75vMr68reE81yrB\nTC3Fxcz29VwbPN2Te7BcGlVYF9jfSOyxhJWRGWxXdzw6FFf5QNUSXKCFU4gNVp/j\nLKOHJ6OlKTGT0zliYB7jj0SfB2PSEFX6PnZRx/Nb3JiiHJgtj0Tk+5pGW/GyOxtl\nDR0OxNtx3q/hG5P9f+9Jthd6ODuo3js7wTUsvY8oJQKBgQDqjEFvwnIW3J36Kjlc\nSTjQAhIwYZjqJtkOY3WXq0qJr9sYWvg4XYc0jIEKWuSioPwJd+/V9HRdXt5X9DFZ\nV1Vy8voxH2k1djC/gH/t66Xf3N1OhOEewJzeorLR3RObrkFguO4TKvah1Z+vA5l5\nDr9ney7xdDpJnNH/QURfoiUgmwKBgQDlmJwOtv1UzvaIFhnBM5GH1JW/NZMNbb9k\n6UPHPMmrq/QALY+3sx0gCtkYfmQlBE7g6SlSfpRTUSr8CyQie02nKrf08Vu0Xk5K\nIFCIwdxO05Nt9H1pdzEGC9WjbIBD30SCoYAUj8lOwK6ioDUhDBTGZVjjl05J07oU\nmgR4KQWB6wKBgGkOt8TCeO3qlcxXG2hN1+e79b+8B41iJzk9rY9pBzMTFPUc0jAV\nHJmaEba8rcp2h04KbeAM5g5ojvkghPY6myio0w4rvqlWrlEo0qSUN7FFMc+Yz2lB\n50IF6Ej+WGkULW6QhvsI9H3avPLcjuLdizhjwcwfPnh4iMtnxaN8clrfAoGBAKFQ\nLiVwkGFr4G8RCBtkfhWvWV805xMCTv05n3N21EMX16HgYR+yav4+YPYCp54SftEr\nQOtDIDfBya+4rDTF6XNQYlto0QPTVrJiLfNIMd/4a5dPtmXJZtpWqk3eR+hoEByw\nF+tacxgv7QM6CNolQNt8DY4qmsjoR899vzIlsEbtAoGBALsHHJxiEFKOu71WKJop\nibTdj+2QYZY7Etq/UAmW50fYvtY8MPwxNpWgYHU8SKt1WlEmqtrp4DyOtoW75Q9s\nBBm8prtzba34R4ftPXGmrbjvmx0e/Wdp/OMSaBkD4/sUV/v2P5jsOjog8y/q6UVx\nGZZ1R+mtfqVQNdZpviSVuMwI\n-----END PRIVATE KEY-----\n",
+  "client_email": "teb-core@teb-core.iam.gserviceaccount.com",
+  "client_id": "115341583285800286369",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/teb-core%40teb-core.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
