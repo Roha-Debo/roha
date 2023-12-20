@@ -12,7 +12,7 @@
             <div class="container-xxl flex-grow-1 container-p-y">
                 <h4 class="py-3 mb-4"><span class="text-muted fw-light">{{ __('cp.form') }} /</span> {{ __('cp.Services') }}</h4>
                 <form class="add-new-question pt-0" id="editServicesForm" enctype="multipart/form-data">
-              <input type="hidden" name="service_id" value="{{optional($services)->id}}">
+              <input type="hidden" name="service_id" @if($services) value="{{optional($services)->id}}" @endif>
                   <div class="row">
                   <div class="col-md-6">
                     <div class="card mb-4">

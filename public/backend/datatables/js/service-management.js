@@ -540,4 +540,5 @@ console.log(doctorId);
                 phoneRegionCode: 'US'
             });
         });
- 
+    }
+})

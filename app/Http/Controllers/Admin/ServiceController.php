@@ -132,10 +132,17 @@ class ServiceController extends Controller
      public function create(Request $request)
      {
 
-        $services = Service::with('media')->first();
-        return view('backend.services.form'
-        ,compact('services')
-    );
+        if($request->service_id)
+        {
+            $services = Service::whereId($request->service_id)->with('media')->first();
+            return view('backend.services.form'
+            ,compact('services')
+        );
+        }
+        else{
+            return view('backend.services.form');
+        }
+
      }
     public function index()
     {
