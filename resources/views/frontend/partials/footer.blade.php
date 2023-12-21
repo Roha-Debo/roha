@@ -3,7 +3,8 @@
         <div class="uk-grid" data-uk-grid-margin="" data-uk-grid-match="">
             <div class="uk-width-medium-1-2 uk-text-center-small uk-flex uk-flex-middle">
                 <div class="inside-flex">
-                    <p>الحقوق محفوظة | تكتيك 2023</p>
+                    {{-- <p>الحقوق محفوظة | تكتيك 2023</p> --}}
+                    <p>{{ __('cp.footer_text') }}</p>
                 </div>
             </div>
             <div class="uk-width-medium-1-2 uk-text-center-small uk-text-right">

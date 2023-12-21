@@ -11,7 +11,8 @@
             <div class="container-xxl flex-grow-1 container-p-y">
                 <h4 class="py-3 mb-4"><span class="text-muted fw-light">{{ __('cp.form') }} /</span> {{ __('cp.Services') }}</h4>
                 <form class="add-new-question pt-0" id="editServicesForm" enctype="multipart/form-data">
-              <input type="hidden" name="service_id" @if($services) value="{{optional($services)->id}}" @endif>
+                  <input type="hidden" name="service_id" value="{{ $services->id ?? '' }}">
+
                   <div class="row">
                   <div class="col-md-6">
                     <div class="card mb-4">
@@ -20,8 +21,25 @@
                         <div class="form-floating">
                           {{-- @if($services) --}}
                           
-                      <input value="{{ optional($services)->getTranslation('title', 'en') ?? ' ' }}" type="text"   id="title_en"
-                      name="title_en"class="form-control">
+                          @isset($services)
+                          <input 
+                              value="{{ optional($services)->getTranslation('title', 'en') ?? '' }}" 
+                              type="text" 
+                              id="title_en"
+                              name="title_en"
+                              class="form-control"
+                          >
+                      @else
+                          <input 
+                              value="" 
+                              type="text" 
+                              id="title_en"
+                              name="title_en"
+                              class="form-control"
+                          >
+                      @endisset
+                      
+                      
                             {{-- @else 
                             <input
                            
@@ -45,24 +63,27 @@
                       </div>
                       <div class="card-body">
                         <div class="form-floating">
-                          @if($services)
-
+                          @isset($services)
                           <input
-                            value="{{ optional($services)->getTranslation('title','ar') ?? " "}}"
-                            type="text"
-                            class="form-control"
-                            id="title_ar"
-                            name="title_ar"
-                            aria-describedby="defaultFormControlHelp" />
-                            @else
-                            <input
-                           
-                            type="text"
-                            class="form-control"
-                            id="title_ar"
-                            name="title_ar"
-                            aria-describedby="defaultFormControlHelp" />
-                            @endif
+                              value="{{ optional($services)->getTranslation('title', 'ar') ?? '' }}"
+                              type="text"
+                              class="form-control"
+                              id="title_ar"
+                              name="title_ar"
+                              aria-describedby="defaultFormControlHelp"
+                          />
+                      @else
+                          <!-- Handle the case where $services is not set -->
+                          <input
+                              value=""
+                              type="text"
+                              class="form-control"
+                              id="title_ar"
+                              name="title_ar"
+                              aria-describedby="defaultFormControlHelp"
+                          />
+                      @endisset
+                      
                           <div id="defaultFormControlHelp" class="form-text">
                             {{ __('cp.title_ar') }}
                           </div>
@@ -75,22 +96,25 @@
                       <h5 class="card-header">{{ __('cp.description') }}</h5>
                       <div class="card-body">
                         <div class="form-floating">
-                          @if($services)
+                          @isset($services)
                           <textarea
-                          value="{{ $services->getTranslation('description','en') ?? " "}}"
-                            class="form-control"
-                            id="description_en"
-                            name="description_en"
-                            aria-describedby="defaultFormControlHelp" >{{ optional($services)->getTranslation('description','en') ?? " "}}</textarea>
-                        
-                            @else
-                            <textarea
-                          value=""
-                            class="form-control"
-                            id="description_en"
-                            name="description_en"
-                            aria-describedby="defaultFormControlHelp" ></textarea>
-                            @endif
+                              value="{{ optional($services)->getTranslation('description', 'en') ?? '' }}"
+                              class="form-control"
+                              id="description_en"
+                              name="description_en"
+                              aria-describedby="defaultFormControlHelp"
+                          >{{ optional($services)->getTranslation('description', 'en') ?? '' }}</textarea>
+                      @else
+                          <!-- Handle the case where $services is not set -->
+                          <textarea
+                              value=""
+                              class="form-control"
+                              id="description_en"
+                              name="description_en"
+                              aria-describedby="defaultFormControlHelp"
+                          ></textarea>
+                      @endisset
+                      
                           <div id="floatingInputHelp" class="form-text">
                             {{ __('cp.description_en') }}
                           </div>
@@ -98,23 +122,25 @@
                       </div>
                       <div class="card-body">
                         <div class="form-floating">
-                          @if($services)
+                          @isset($services)
                           <textarea
-                          value="{{ optional($services)->getTranslation('description','ar') ?? " "}}"
-                            class="form-control"
-                            id="description_ar"
-                            name="description_ar"
-                            aria-describedby="defaultFormControlHelp" >{{ optional($services)->getTranslation('description','ar') ?? " "}}</textarea>
+                              value="{{ optional($services)->getTranslation('description', 'ar') ?? '' }}"
+                              class="form-control"
+                              id="description_en"
+                              name="description_en"
+                              aria-describedby="defaultFormControlHelp"
+                          >{{ optional($services)->getTranslation('description', 'ar') ?? '' }}</textarea>
+                      @else
+                          <!-- Handle the case where $services is not set -->
+                          <textarea
+                              value=""
+                              class="form-control"
+                              id="description_en"
+                              name="description_en"
+                              aria-describedby="defaultFormControlHelp"
+                          ></textarea>
+                      @endisset
                       
-                            @else
-                            <textarea
-                          
-                            type="text"
-                            class="form-control"
-                            id="description_ar"
-                            name="description_ar"
-                            aria-describedby="defaultFormControlHelp" ></textarea>
-                            @endif
                           <div id="floatingInputHelp" class="form-text">
                             {{ __('cp.description_ar') }}
                           </div>
@@ -132,41 +158,29 @@
                     <h5 class="card-header">{{ __('cp.file_input') }}</h5>
                     <div class="card-body">
                       <div class="mb-3">
-                        <label for="service_image" class="form-label">{{ __('cp.service_image') }}</label>
-                        {{-- <input class="form-control" type="file" id="service_image" name="service_image"/> --}}
-                        @php
-                        if($services)
-                        {
-                        $serviceImage = $services->media->where('collection_name', 'service_image')->first();
-                        }
-                        @endphp
-                        {{-- @if (optional($services)->getMedia('service_image')->isNotEmpty()) --}}
-                            <!-- Display existing image information -->
-                            {{-- @foreach (optional($services)->getMedia('service_image') as $media) --}}
-                        <input class="form-control" type="file" id="service_image" name="service_image" onchange="previewFile('service_image', 'filePreview1')"/>
-                        <img id="filePreview1"  @if($services)
-                            src="{{ optional($serviceImage)->original_url }}" @endif alt="Image Preview" height="200px" style="max-width: 100%; ">
-                        {{-- <p>{{__('cp.existing_file')}}: <a href="{{ $media->original_url }}" target="_blank">{{ $media->file_name }}</a></p> --}}
-                                
-                                <!-- Set the correct src attribute for the existing image -->
-                                {{-- <img src="{{ $media->getUrl() }}" alt="Existing Image" style="max-width: 100%;"> --}}
-                            {{-- @endforeach
+                        @isset($services)
+                            <label for="service_image" class="form-label">{{ __('cp.service_image') }}</label>
+                            
+                            @php
+                                $serviceImage = $services->media->where('collection_name', 'service_image')->first();
+                            @endphp
+                    
+                            <!-- Input for uploading an image -->
+                            <input class="form-control" type="file" id="service_image" name="service_image" onchange="previewFile('service_image', 'filePreview1')"/>
+                            
+                            <!-- Image preview -->
+                            <img id="filePreview1" src="{{ optional($serviceImage)->original_url }}" alt="Image Preview" height="200px" style="max-width: 100%;">
+                    
                         @else
-                            <p>No existing image found.</p>
-                        @endif --}}
+                            <!-- Handle the case where $services is not set -->
+                            <label for="service_image" class="form-label">{{ __('cp.service_image') }}</label>
+                            <input class="form-control" type="file" id="service_image" name="service_image" onchange="previewFile('service_image', 'filePreview1')"/>
+                            <img id="filePreview1" src="" alt="Image Preview" height="200px" style="max-width: 100%;">
+                            @endisset
                     </div>
                     
                     
-                      {{-- <div class="mb-3">
-                        <label for="section3_file1" class="form-label">{{ __('cp.section3_file1') }}</label>
-                        <input class="form-control" type="file" id="section3_file1" name="section3_file1"/>
-                        <a id="filePreview2" href="#" target="_blank" style="display: none;">Preview PDF</a>
-                      </div> --}}
-                      {{-- <div>
-                        <label for="section3_file2" class="form-label">{{ __('cp.section3_file2') }}</label>
-                        <input class="form-control" type="file" id="section3_file2" name="section3_file2"/>
-                        <a id="filePreview3" href="#" target="_blank" style="display: none;">Preview PDF</a>
-                      </div> --}}
+                    
                     </div>
                   </div>
                   </div>

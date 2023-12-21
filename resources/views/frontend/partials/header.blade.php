@@ -4,7 +4,7 @@
         <div class="uk-grid" data-uk-grid-match="">
             <div class="uk-width-medium-2-10 uk-width-8-10 uk-flex uk-flex-middle">
                 <div class="inside-felx">
-                    <a href="#"><img src="#"  alt="تكتيك - للانتاج الاعلاني والتصميم والبرمجة والتسويق الاولى في السعوديه"></a>
+                    <a href="#"><img src="#"  alt="{{ __('cp.logo_alt') }}"></a>
                 </div>
             </div>
             <div class="uk-width-medium-8-10 uk-flex uk-flex-middle uk-text-right">

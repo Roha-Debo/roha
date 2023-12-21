@@ -274,7 +274,6 @@ return [
     'section1_description'=>'First Section Description',
     'section1_description_description_en'=>'Description of the First Section in English',
     'section1_description_description_ar'=>'Description of the First Section in Arabic',
-    'footer_text'=>'Footer Text',
     'footer_text_description_en'=>'The Text in Footer Section in English',
     'footer_text_description_ar'=>'The Text in Footer Section in Arabic',
     'file_input'=>'File Input',
@@ -291,6 +290,9 @@ return [
     'service_image'=>'Service Image',
     'existing_file'=>' Existing file',
     'employment'=>'Employment',
+    'footer_text'=>'Copyright Reserved | Tactic 2023',
+    'logo_alt'=>'Tactic - for advertising production, design, programming and marketing the first in Saudi Arabia'
+
 ];
 
 

@@ -35,7 +35,6 @@ return [
     'section1_description'=>'وصف القسم الأول',
     'section1_description_description_en'=>'الوصف الموجود في القسم الأول باللغة الانكليزية',
     'section1_description_description_ar'=>'الوصف الموجود في القسم الأول باللغة العربية',
-    'footer_text'=>'نص التذييل',
     'footer_text_description_en'=>'النص الموجود في التذييل باللغة الانكليزية',
     'footer_text_description_ar'=>'النص الموجود في التذييل باللغة العربية',
     'file_input'=>'تحميل الملفات',
@@ -52,4 +51,6 @@ return [
     'service_image'=>'صورة من اجل الخدمة',
     'existing_file'=>'الملف موجود',
     'employment'=>'التوظيف',
+    'footer_text'=>'الحقوق محفوظة | تكتيك 2023',
+    'logo_alt'=>'تكتيك - للانتاج الاعلاني والتصميم والبرمجة والتسويق الاولى في السعوديه'
 ];
