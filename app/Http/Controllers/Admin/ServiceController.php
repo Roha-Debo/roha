@@ -131,10 +131,10 @@ class ServiceController extends Controller
     
      public function create(Request $request)
      {
-
-        if($request->service_id)
+ //dd($request->all());
+        if($request->id)
         {
-            $services = Service::whereId($request->service_id)->with('media')->first();
+            $services = Service::whereId($request->id)->with('media')->first();
             return view('backend.services.form'
             ,compact('services')
         );
@@ -244,15 +244,18 @@ class ServiceController extends Controller
     // }
     public function store(Request $request)
     {
-        log::info($request->all());
+      // dd($request->all());
         $data['title'] = ['en' => $request->title_en, 'ar' => $request->title_ar];
         $data['description'] = ['en' => $request->description_en, 'ar' => $request->description_ar];
         // $data['footer_text'] = ['en' => $request->footer_text_en, 'ar' => $request->footer_text_ar];
       
-            $services = Service::create($data);
+           
       if($request->service_id){
             $services = Service::where('id', $request->service_id)->first();
             $services->update($data);
+        }
+        else{
+            $services = Service::create($data);
         }
         if ($request->hasFile('service_image')) {
             $services->clearMediaCollection('service_image');

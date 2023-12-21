@@ -291,7 +291,10 @@ return [
     'existing_file'=>' Existing file',
     'employment'=>'Employment',
     'footer_text'=>'Copyright Reserved | Tactic 2023',
-    'logo_alt'=>'Tactic - for advertising production, design, programming and marketing the first in Saudi Arabia'
+    'logo_alt'=>'Tactic - for advertising production, design, programming and marketing the first in Saudi Arabia',
+    'title_text'=>'Tactic - for advertising production, design, programming and marketing the first in Saudi Arabia',
+    'mete_description'=>'A tactic platform through which you present your project to the best media production companies in Saudi Arabia to obtain quotations directly and contract, pay and discuss professionally',
+    'mete_keywords'=>'Tactic Platform Tactics Video production Required Photographer Designer Designer Editor Producer Professional Editor Professional Documentary Photography Short Film Long Media Production Companies Advertising Company Motion Graphic'
 
 ];
 

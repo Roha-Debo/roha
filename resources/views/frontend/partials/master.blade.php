@@ -11,9 +11,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>تكتيك - للانتاج الاعلاني والتصميم والبرمجة والتسويق الاولى في السعوديه </title>
-    <meta name="description" content="منصة تكتيك من خلالها تعرض مشروعك على أفضل شركات الإنتاج الإعلامي في السعودية  للحصول على عروض الأسعار مباشرة و والتعاقد والدفع والنقاش بشكل احترافي">
-    <meta name="keywords" content="تكتيك منصة التكتيك انتاج فيديو مطلوب مصور مصوره مصمم مصممه مونتير ممنتج مونتاج محترف احتراف تصوير وثائقي فيلم قصير طويل شركات انتاج اعلامي شركة دعائي دعايه موشن جرافيك ">
+    <title>{{ __('cp.title_text') }}</title>
+    <meta name="description" content="{{ __('cp.mete_description') }}">
+    <meta name="keywords" content="{{ __('cp.mete_keywords') }}">
+    {{-- <meta name="description" content="منصة تكتيك من خلالها تعرض مشروعك على أفضل شركات الإنتاج الإعلامي في السعودية  للحصول على عروض الأسعار مباشرة و والتعاقد والدفع والنقاش بشكل احترافي">
+    <meta name="keywords" content="تكتيك منصة التكتيك انتاج فيديو مطلوب مصور مصوره مصمم مصممه مونتير ممنتج مونتاج محترف احتراف تصوير وثائقي فيلم قصير طويل شركات انتاج اعلامي شركة دعائي دعايه موشن جرافيك "> --}}
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
