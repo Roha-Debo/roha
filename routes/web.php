@@ -38,7 +38,7 @@ Route::group(
         // Route::get('/main',function(){
         //     return view('frontend.main');
         // });
-        Route::resource('/main', PublicsiteSettingsiteController::class);
+        Route::resource('/', PublicsiteSettingsiteController::class);
 
     Route::middleware(['auth:admin'])->prefix('admin')->as('admin.')->group(function () {
 

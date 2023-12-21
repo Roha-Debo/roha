@@ -73,7 +73,7 @@
         <li class="menu-item {{ request()->is(app()->getLocale().'/admin/services/index') ? 'active' : '' }}">
             <a href="{{route('admin.services.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-settings"></i>
-                <div>{{__('cp.Services')}}</div>
+                <div>{{__('cp.services')}}</div>
             </a>
         </li>
         <li class="menu-item {{ request()->is(app()->getLocale().'/admin/services/create') ? 'active' : '' }}">
