@@ -65,13 +65,36 @@
     </div></a>
 
 </div>
-<!-- <div class="uk-container uk-container-center">
-   Example of your ads placing 
+<div class="dividers"></div>
+@php
+if($settings)
+{
+$section3File1 = $settings->media->where('collection_name', 'section3_file1')->first();
+$section3File2 = $settings->media->where('collection_name', 'section3_file2')->first();
+}
+@endphp
+<div class="uk-container uk-container-center">
     <div class="block-slides">
         <div class="uk-grid uk-grid-small ">
-            <div class="uk-width-medium-2-2">
+            <div class="uk-width-medium-1-2">
                 
-                <a href="#" class="block-slide slide-1" style="min-height:auto">
+                <a href="{{ optional($section3File1)->original_url }}" class="block-slide slide-1" style="min-height:auto">
+                    <div class="text">
+                        <h1>
+                            اطلب خدمة
+                        </h1>
+                        <p>
+                            العديد من شركات الانتاج الإعلامي والمصممين والمطورين المحترفين في تكتيك مستعدين للعمل على مشروعك
+                        </p>
+                    </div>
+                    <div class="victor">
+                        <img src="images/vic-1.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="uk-width-medium-1-2">
+                
+                <a href="{{ optional($section3File2)->original_url  }}" class="block-slide slide-1" style="min-height:auto">
                     <div class="text">
                         <h1>
                             اطلب خدمة
@@ -87,7 +110,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div> 
 
 
 

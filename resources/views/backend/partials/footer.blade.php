@@ -7,7 +7,7 @@
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
-                , made with ❤️ by <a href="#" target="_blank" class="fw-medium">Moaz</a>
+                , made with ❤️ by <a href="#" target="_blank" class="fw-medium">Tactic</a>
             </div>
         </div>
     </div>

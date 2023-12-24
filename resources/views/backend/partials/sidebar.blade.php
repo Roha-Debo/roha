@@ -86,12 +86,12 @@
             <span class="menu-header-text">Members</span>
         </li>
 
-        <li class="menu-item {{ request()->is(app()->getLocale().'/admin/users*') ? 'active' : '' }}">
+        {{-- <li class="menu-item {{ request()->is(app()->getLocale().'/admin/users*') ? 'active' : '' }}">
             <a href="{{route('admin.users.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-users"></i>
                 <div>{{__('cp.users')}}</div>
             </a>
-        </li>
+        </li> --}}
 
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Logout</span>

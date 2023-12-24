@@ -4,7 +4,7 @@
 @section('admin')
 
     <div class="container-xxl flex-grow-1 container-p-y">
-        <div class="row">
+        {{-- <div class="row">
             <!-- Website Analytics -->
             <div class="col-lg-6 mb-4">
                 <div
@@ -837,6 +837,6 @@
                 </div>
             </div>
             <!--/ Projects table -->
-        </div>
+        </div> --}}
     </div>
 @endsection
