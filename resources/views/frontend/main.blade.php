@@ -81,10 +81,10 @@ $section3File2 = $settings->media->where('collection_name', 'section3_file2')->f
                 <a href="{{ optional($section3File1)->original_url }}" class="block-slide slide-1" style="min-height:auto">
                     <div class="text">
                         <h1>
-                            اطلب خدمة
+                            {{ __('cp.request_service') }}
                         </h1>
                         <p>
-                            العديد من شركات الانتاج الإعلامي والمصممين والمطورين المحترفين في تكتيك مستعدين للعمل على مشروعك
+                            {{ __('cp.file1_description') }}
                         </p>
                     </div>
                     <div class="victor">
@@ -97,10 +97,10 @@ $section3File2 = $settings->media->where('collection_name', 'section3_file2')->f
                 <a href="{{ optional($section3File2)->original_url  }}" class="block-slide slide-1" style="min-height:auto">
                     <div class="text">
                         <h1>
-                            اطلب خدمة
+                            {{ __('cp.request_service') }}
                         </h1>
                         <p>
-                            العديد من شركات الانتاج الإعلامي والمصممين والمطورين المحترفين في تكتيك مستعدين للعمل على مشروعك
+                            {{ __('cp.file2_description') }}
                         </p>
                     </div>
                     <div class="victor">

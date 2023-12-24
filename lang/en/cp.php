@@ -294,7 +294,10 @@ return [
     'logo_alt'=>'Tactic - for advertising production, design, programming and marketing the first in Saudi Arabia',
     'title_text'=>'Tactic - for advertising production, design, programming and marketing the first in Saudi Arabia',
     'mete_description'=>'A tactic platform through which you present your project to the best media production companies in Saudi Arabia to obtain quotations directly and contract, pay and discuss professionally',
-    'mete_keywords'=>'Tactic Platform Tactics Video production Required Photographer Designer Designer Editor Producer Professional Editor Professional Documentary Photography Short Film Long Media Production Companies Advertising Company Motion Graphic'
+    'mete_keywords'=>'Tactic Platform Tactics Video production Required Photographer Designer Designer Editor Producer Professional Editor Professional Documentary Photography Short Film Long Media Production Companies Advertising Company Motion Graphic',
+    'request_service'=>'Request a Service',
+    'file1_description'=>'Many media production companies, designers and professional developers in tactics are ready to work on your project',
+    'file2_description'=>'Many media production companies, designers and professional developers in tactics are ready to work on your project',
 
 ];
 
