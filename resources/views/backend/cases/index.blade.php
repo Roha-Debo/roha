@@ -91,41 +91,41 @@
                   </div>
                 </div>
                 <div class="row">
-                  {{-- <div class="col-md-6">
+                  <div class="col-md-6">
                     <div class="card mb-4">
-                      <h5 class="card-header">{{ __('cp.footer_text') }}</h5>
+                      <h5 class="card-header">{{ __('cp.title_text_text') }}</h5>
                       <div class="card-body">
                         <div  class="form-floating">
-                          <textarea
+                          <input
                           @if($settings)
-                          value="{{ $settings->getTranslation('footer_text','en') ?? " "}}"
+                          value="{{ $settings->getTranslation('title_text','en') ?? " "}}"
                           @endif
                             class="form-control"
-                            id="footer_text_en"
-                            name="footer_text_en"
-                            aria-describedby="defaultFormControlHelp" >{{ $settings->getTranslation('footer_text','en') ?? " "}}</textarea>
+                            id="title_text_en"
+                            name="title_text_en"
+                            aria-describedby="defaultFormControlHelp" />
                           <div id="defaultFormControlHelp" class="form-text">
-                            {{ __('cp.footer_text_description_en') }}
+                            {{ __('cp.title_text_description_en') }}
                           </div>
                         </div>
                       </div>
                       <div class="card-body">
                         <div  class="form-floating">
-                          <textarea
+                          <input
                           @if($settings)
-                          value="{{ $settings->getTranslation('footer_text','ar') ?? " "}}"
+                          value="{{ $settings->getTranslation('title_text','ar') ?? " "}}"
                           @endif
                             class="form-control"
-                            id="footer_text_ar"
-                            name="footer_text_ar"
-                            aria-describedby="defaultFormControlHelp" > {{$settings->getTranslation('footer_text','ar') ?? " "}}</textarea>
+                            id="title_text_ar"
+                            name="title_text_ar"
+                            aria-describedby="defaultFormControlHelp" />
                           <div id="defaultFormControlHelp" class="form-text">
-                            {{ __('cp.footer_text_description_ar') }}
+                            {{ __('cp.title_text_description_ar') }}
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div> --}}
+                  </div>
                   <div class="col-md-6">
                   <!-- File input -->
                   <div class="card">
@@ -159,6 +159,85 @@
                       </div>
                     </div>
                   </div>
+                  </div>
+                  <div class="col-xl-6">
+                  </div>
+                </div>
+                <br/>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card mb-4">
+                      <h5 class="card-header">{{ __('cp.mete_description') }}</h5>
+                      <div class="card-body">
+                        <div class="form-floating">
+                          <input
+                          @if($settings)
+                            value="{{ $settings->getTranslation('mete_description','en') ?? " " }}"
+                          @endif
+                            type="text"
+                            class="form-control"
+                            id="mete_description_en"
+                            name="mete_description_en"
+                            aria-describedby="defaultFormControlHelp" />
+                          <div id="defaultFormControlHelp" class="form-text">
+                            {{ __('cp.mete_description_description_en') }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="form-floating">
+                          <input
+                          @if($settings)
+                            value="{{ $settings->getTranslation('mete_description','ar') ?? " "}}"
+                          @endif
+                            type="text"
+                            class="form-control"
+                            id="mete_description_ar"
+                            name="mete_description_ar"
+                            aria-describedby="defaultFormControlHelp" />
+                          <div id="defaultFormControlHelp" class="form-text">
+                            {{ __('cp.mete_description_description_ar') }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-4">
+                      <h5 class="card-header">{{ __('cp.mete_keywords') }}</h5>
+                      <div class="card-body">
+                        <div class="form-floating">
+                          <input
+                          @if($settings)
+                          value="{{ $settings->getTranslation('mete_keywords','en') ?? " "}}"
+                          @endif
+                            type="text"
+                            class="form-control"
+                            id="mete_keywords_en"
+                            name="mete_keywords_en"
+                            aria-describedby="floatingInputHelp" />
+                          <div id="floatingInputHelp" class="form-text">
+                            {{ __('cp.mete_keywords_description_en') }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="form-floating">
+                          <input
+                          @if($settings)
+                          value="{{ $settings->getTranslation('mete_keywords','ar') ?? " "}}"
+                          @endif
+                            type="text"
+                            class="form-control"
+                            id="mete_keywords_ar"
+                            name="mete_keywords_ar"
+                            aria-describedby="floatingInputHelp" />
+                          <div id="floatingInputHelp" class="form-text">
+                            {{ __('cp.mete_keywords_description_ar') }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="col-xl-6">
                   </div>

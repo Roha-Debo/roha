@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('youtube_link')->nullable();
             $table->text('section1_description')->nullable();
             $table->text('footer_text')->nullable();
+            $table->text('title_text')->nullable();
+            $table->text('mete_description')->nullable();
+            $table->text('mete_keywords')->nullable();
             $table->timestamps();
         });
     }

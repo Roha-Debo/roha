@@ -13,7 +13,7 @@ class Setting extends Model implements HasMedia
 {
     use HasFactory ,HasTranslations ,  InteractsWithMedia;
     protected $guarded=[];
-    public $translatable = ['section1_title','section1_description','footer_text'];
+    public $translatable = ['section1_title','section1_description','footer_text','title_text','mete_description','mete_keywords'];
 
 
     public function registerMediaCollections(): void

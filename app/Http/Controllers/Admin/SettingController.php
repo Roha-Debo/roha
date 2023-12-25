@@ -32,6 +32,9 @@ class SettingController extends Controller
         $data['section1_title'] = ['en' => $request->section1_title_en, 'ar' => $request->section1_title_ar];
         $data['section1_description'] = ['en' => $request->section1_description_en, 'ar' => $request->section1_description_ar];
         $data['footer_text'] = ['en' => $request->footer_text_en, 'ar' => $request->footer_text_ar];
+        $data['title_text'] = ['en' => $request->title_text_en, 'ar' => $request->title_text_ar];
+        $data['mete_description'] = ['en' => $request->mete_description_en, 'ar' => $request->mete_description_ar];
+        $data['mete_keywords'] = ['en' => $request->mete_keywords_en, 'ar' => $request->mete_keywords_ar];
         if (count(Setting::get()) == 0)
         {
             $settings = Setting::create($data);
