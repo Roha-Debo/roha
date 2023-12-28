@@ -42,29 +42,16 @@
         </div>
         <div class="dividers"></div>
     </div>
-    
-
-
-
-
-
-
+@foreach($puckets as $pucket)
 <div class="uk-container uk-container-center">
     <a href="#"><div class="uk-container uk-container-center">
         <div class="breadcrumb-account login-page">
-            <h1>الخدمة</h1>
-            <p>ليس لديك حساب ؟ </p>
+            <h1>{{$pucket->title}}</h1>
+            <p>{{ $pucket->description }}</p>
         </div></a>
-
-</div>
+</div>  
 <div class="dividers"></div>
-<a href="#"><div class="uk-container uk-container-center">
-    <div class="breadcrumb-account login-page">
-        <h1>الخدمة</h1>
-        <p>ليس لديك حساب ؟ </p>
-    </div></a>
-
-</div>
+@endforeach
 <div class="dividers"></div>
 @php
 if($settings)

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\publicsite;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Models\Setting;
+use App\Models\Pucket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
@@ -20,13 +21,18 @@ class SettingsiteController extends Controller
         $settings['mete_description'] = optional($settings)->getTranslation('mete_description', app()->getLocale(Config::get('app.locale')));
         $settings['mete_keywords'] =optional($settings)->getTranslation('mete_keywords', app()->getLocale(Config::get('app.locale')));
        //dd($settings);
-       $services=Service::with('media')->get();
+       $services=Service::get();
+       $puckets=Pucket::get();
        foreach ($services as $service) {
-        $service['title'] = $service->getTranslation('title', app()->getLocale(Config::get('app.locale')));
-        $service['description'] = $service->getTranslation('description', app()->getLocale(Config::get('app.locale')));
+        $service['title'] = $service->title;
+        $service['description'] = $service->description;
+       }
+       foreach ($puckets as $pucket) {
+        $pucket['title'] = $pucket->title;
+        $pucket['description'] = $pucket->description;
        }
       // dd($services);
-        return view('frontend.main',compact('settings','services'));
+        return view('frontend.main',compact('settings','services','puckets'));
     }
 
     /**

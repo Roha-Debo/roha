@@ -61,6 +61,8 @@ Route::group(
         Route::resource('/puckets', PucketController::class);
         Route::get('/api-puckets', [PucketController::class, 'puckets_api'])->name('puckets.api');
         Route::resource('/pucketServices', PucketServiceController::class);
+        Route::get('/api-pucketServices', [PucketServiceController::class, 'pucketServices_api'])->name('pucketServices.api');
+
 
 
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->double('price');
-            $table->double('offer');
+            $table->double('discount');
             $table->foreignId('pucket_id')->constrained()->cascadeOnDelete()->nullable();          
             $table->timestamps();
         });

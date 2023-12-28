@@ -1,14 +1,13 @@
 /**
- * Page Country List
+ * Page puckets List
  */
 
 'use strict';
 const validationMessages = $('#validation-messages');
 const addNewTranslation = validationMessages.data('add-new');
-const nameEnRequiredTranslation = validationMessages.data('name-en-required');
-const nameArRequiredTranslation = validationMessages.data('name-ar-required');
+const titleEnRequiredTranslation = validationMessages.data('title-en-required');
+const titleArRequiredTranslation = validationMessages.data('title-ar-required');
 const parentIdRequiredTranslation = validationMessages.data('parent-id-required');
-const countryKeyRequiredTranslation = validationMessages.data('country-key-required');
 const exportFile = validationMessages.data('export');
 const selectOption = validationMessages.data('select');
 const edit = validationMessages.data('edit');
@@ -29,9 +28,9 @@ const delete_done = validationMessages.data('delete_done');
 // Datatable (jquery)
 $(function () {
     // Variable declaration for table
-    var dt_country_table = $('.datatables-countries'),
-        countryView = baseUrl + '/admin/api-countries',
-        offCanvasForm = $('#offcanvasAddCountry');
+    var dt_pucket_service_table = $('.datatables-pucket-sevicess'),
+        pucketView = baseUrl + '/admin/api-pucketServices',
+        offCanvasForm = $('#offcanvasAddPucketService');
 
     // ajax setup
     $.ajaxSetup({
@@ -40,20 +39,23 @@ $(function () {
         }
     });
 
-    // countries datatable
-    if (dt_country_table.length) {
-        var dt_country = dt_country_table.DataTable({
+    // puckets datatable
+    if (dt_pucket_service_table.length) {
+        var dt_pucket_service = dt_pucket_service_table.DataTable({
             processing: true,
             serverSide: true,
             ajax: {
-                url: baseUrl + '/admin/api-countries'
+                url: baseUrl + '/admin/api-pucketServices'
             },
             columns: [
                 // columns according to JSON
                 { data: '' },
                 { data: 'id' },
-                { data: 'name'},
-                { data: 'country_key'},
+                { data: 'title'},
+                { data: 'description'},
+                { data: 'price'},
+                { data: 'discount'},
+                { data: 'pucket'},
                 { data: 'created_at'},
                 { data: 'action' }
             ],
@@ -78,33 +80,17 @@ $(function () {
                     }
                 },
                 {
-                    // country name
                     targets: 2,
-                    // render: function (data, type, full, meta) {
-                    //     var $name = full['name'];
-                    //
-                    //     return '<span class="country-name">' + $name + '</span>';
-                    // }
                     render: function (data, type, full, meta) {
-                        var $name = full['name'],
-                            $id = full['id'],
-                            $image = full['image'];
-                        // if ($image) {
-                        //     // For Product image
-                        //
-                        //     var $output = '<img src="' + $image + '" alt="country-' + $id + '" class="rounded-2">';
-                        // }
-                        // Creates full output for Product name and product_brand
+                        var $title = full['title'];
+
                         var $row_output =
-                            '<div class="d-flex justify-content-start align-items-center product-name">' +
+                            '<div class="d-flex justify-content-start align-items-center product-title">' +
                             '<div class="avatar-wrapper">' +
-                            // '<div class="avatar avatar me-2 rounded-2 bg-label-secondary">' +
-                            // $output +
-                            // '</div>' +
                             '</div>' +
                             '<div class="d-flex flex-column">' +
                             '<h6 class="text-body text-nowrap mb-0">' +
-                            $name +
+                            $title +
                             '</h6>' +
                             '</div>' +
                             '</div>';
@@ -113,20 +99,11 @@ $(function () {
                 },
                 {
                     // Created at
-                    targets: 3,
-                    render: function (data, type, full, meta) {
-                        var $country_key = full['country_key'];
-
-                        return '<span class="country-country_key">' + $country_key + '</span>';
-                    }
-                },
-                {
-                    // Created at
-                    targets: 4,
+                    targets: 7,
                     render: function (data, type, full, meta) {
                         var $created_at = full['created_at'];
 
-                        return '<span class="country-created_at">' + $created_at + '</span>';
+                        return '<span class="pucket-service-created_at">' + $created_at + '</span>';
                     }
                 },
                 {
@@ -138,7 +115,7 @@ $(function () {
                     render: function (data, type, full, meta) {
                         return (
                             '<div class="d-inline-block text-nowrap">' +
-                            `<button class="btn btn-sm btn-icon edit-record" data-id="${full['id']}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAddCountry"><i class="ti ti-edit"></i></button>` +
+                            `<button class="btn btn-sm btn-icon edit-record" data-id="${full['id']}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAddPucketService"><i class="ti ti-edit"></i></button>` +
                             `<button class="btn btn-sm btn-icon delete-record" data-id="${full['id']}"><i class="ti ti-trash"></i></button>` +
                             // '<button class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>' +
                             // '<div class="dropdown-menu dropdown-menu-end m-0">' +
@@ -175,162 +152,13 @@ $(function () {
             },
             // Buttons with Dropdown
             buttons: [
-                {
-                    extend: 'collection',
-                    className: 'btn btn-label-primary dropdown-toggle mx-3',
-                    text: '<i class="ti ti-logout rotate-n90 me-2"></i>' + exportFile,
-                    buttons: [
-                        {
-                            extend: 'print',
-                            title: 'countries',
-                            text: '<i class="ti ti-printer me-2" ></i>Print',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be print
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList !== undefined && item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('country-name')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            },
-                            customize: function (win) {
-                                //customize print view for dark
-                                $(win.document.body)
-                                    .css('color', config.colors.headingColor)
-                                    .css('border-color', config.colors.borderColor)
-                                    .css('background-color', config.colors.body);
-                                $(win.document.body)
-                                    .find('table')
-                                    .addClass('compact')
-                                    .css('color', 'inherit')
-                                    .css('border-color', 'inherit')
-                                    .css('background-color', 'inherit');
-                            }
-                        },
-                        {
-                            extend: 'csv',
-                            title: 'countries',
-                            text: '<i class="ti ti-file-text me-2" ></i>Csv',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be print
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('country-name')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            extend: 'excel',
-                            title: 'countries',
-                            text: '<i class="ti ti-file-spreadsheet me-2"></i>Excel',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be display
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('country-name')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            extend: 'pdf',
-                            title: 'countries',
-                            text: '<i class="ti ti-file-text me-2"></i>Pdf',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be display
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('country-name')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            extend: 'copy',
-                            title: 'countries',
-                            text: '<i class="ti ti-copy me-1" ></i>Copy',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be copy
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('country-name')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            }
-                        }
-                    ]
-                },
+
                 {
                     text: '<i class="ti ti-plus me-0 me-sm-1"></i><span class="d-none d-sm-inline-block">' + addNewTranslation + '</span>',
                     className: 'add-new btn btn-primary',
                     attr: {
                         'data-bs-toggle': 'offcanvas',
-                        'data-bs-target': '#offcanvasAddCountry'
+                        'data-bs-target': '#offcanvasAddPucketService'
                     }
                 }
             ],
@@ -340,7 +168,7 @@ $(function () {
                     display: $.fn.dataTable.Responsive.display.modal({
                         header: function (row) {
                             var data = row.data();
-                            return 'Details of ' + data['name'];
+                            return 'Details of ' + data['title'];
                         }
                     }),
                     type: 'column',
@@ -385,7 +213,7 @@ $(function () {
 
     // Delete Record
     $(document).on('click', '.delete-record', function () {
-        var country_id = $(this).data('id'),
+        var pucket_service_id = $(this).data('id'),
             dtrModal = $('.dtr-bs-modal.show');
 
         // hide responsive modal in small screen
@@ -411,9 +239,9 @@ $(function () {
                 // delete the data
                 $.ajax({
                     type: 'DELETE',
-                    url: `${baseUrl}/admin/countries/${country_id}`,
+                    url: `${baseUrl}/admin/pucketServices/${pucket_service_id}`,
                     success: function () {
-                        dt_country.draw();
+                        dt_pucket_service.draw();
                     },
                     error: function (error) {
                         console.log(error);
@@ -432,7 +260,7 @@ $(function () {
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 Swal.fire({
                     title: cancel,
-                    text: 'The country is not deleted!',
+                    text: 'The service is not deleted!',
                     icon: 'error',
                     customClass: {
                         confirmButton: 'btn btn-success'
@@ -444,7 +272,7 @@ $(function () {
 
     // edit record
     $(document).on('click', '.edit-record', function () {
-        var country_id = $(this).data('id'),
+        var pucket_service_id = $(this).data('id'),
             dtrModal = $('.dtr-bs-modal.show');
 
         // hide responsive modal in small screen
@@ -453,21 +281,25 @@ $(function () {
         }
 
         // changing the title of offcanvas
-        $('#offcanvasAddCountryLabel').html(edit);
+        $('#offcanvasAddPucketServiceLabel').html(edit);
 
         // get data
-        $.get(`${baseUrl}/admin/countries\/${country_id}\/edit`, function (data) {
-            $('#country_id').val(data.id);
-            $('#add-country-name-ar').val(data.name.ar);
-            $('#add-country-name-en').val(data.name.en);
-            $('#add-country-key').val(data.country_key);
+        $.get(`${baseUrl}/admin/pucketServices\/${pucket_service_id}\/edit`, function (data) {
+            $('#pucket_service_id').val(data.id);
+            $('#add-pucket-service-title-ar').val(data.title.ar);
+            $('#add-pucket-service-title-en').val(data.title.en);
+            $('#add-pucket-service-description-ar').val(data.description.ar);
+            $('#add-pucket-service-description-en').val(data.description.en);
+            $('#add-pucket-service-price').val(data.price);
+            $('#add-pucket-service-discount').val(data.discount);
+            $('#pucket_id').val(data.pucket_id);
         });
     });
 
     // changing the title
     $('.add-new').on('click', function () {
-        $('#country_id').val(''); //reseting input field
-        $('#offcanvasAddCountryLabel').html(addNewTranslation);
+        $('#pucket_service_id').val(''); //reseting input field
+        $('#offcanvasAddPucketServiceLabel').html(addNewTranslation);
     });
 
     // Filter form control to default size
@@ -478,39 +310,26 @@ $(function () {
     }, 300);
 
     // validating form and updating countries data
-    const addNewCountryForm = document.getElementById('addNewCountryForm');
+    const addNewPucketServiceForm = document.getElementById('addNewPucketServiceForm');
 
-    // country form validation
-    const fv = FormValidation.formValidation(addNewCountryForm, {
+    // PucketService form validation
+    const fv = FormValidation.formValidation(addNewPucketServiceForm, {
         fields: {
-            name_en: {
+            title_en: {
                 validators: {
                     notEmpty: {
-                        message: nameEnRequiredTranslation
+                        message: titleEnRequiredTranslation
                     }
                 }
             },
-            name_ar: {
+            title_ar: {
                 validators: {
                     notEmpty: {
-                        message: nameArRequiredTranslation
+                        message: titleArRequiredTranslation
                     }
                 }
             },
-            country_key: {
-                validators: {
-                    notEmpty: {
-                        message: countryKeyRequiredTranslation
-                    }
-                }
-            },
-            // image: {
-            //     validators: {
-            //         notEmpty: {
-            //             message: 'Please upload image'
-            //         }
-            //     }
-            // },
+
         },
         plugins: {
             trigger: new FormValidation.plugins.Trigger(),
@@ -528,21 +347,21 @@ $(function () {
             autoFocus: new FormValidation.plugins.AutoFocus()
         }
     }).on('core.form.valid', function () {
-        var formData = new FormData(addNewCountryForm);
+        var formData = new FormData(addNewPucketServiceForm);
         // adding or updating country when form successfully validate
         $.ajax({
             // data: $('#addNewcountryForm').serialize(),
-            url: `${baseUrl}/${lang}/admin/countries`,
+            url: `${baseUrl}/${lang}/admin/pucketServices`,
             type: 'POST',
             data: formData,
             dataType: 'json',
             contentType: false,
             processData: false,
             success: function (status) {
-                dt_country.draw();
+                dt_pucket_service.draw();
                 offCanvasForm.offcanvas('hide');
                 // Clear form inputs
-                $('#addNewCountryForm').trigger('reset');
+                $('#addNewPucketServiceForm').trigger('reset');
 
                 // sweetalert
                 Swal.fire({

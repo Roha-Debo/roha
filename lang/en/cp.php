@@ -308,6 +308,8 @@ return [
     'save'=>'Save',
     'add_puckets'=>'Add Puckets',
     'oky'=>'ok',
+    'pucket'=>'Pucket',
+    'add_service'=>'Add Service'
 
 ];
 

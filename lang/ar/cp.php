@@ -68,5 +68,16 @@ return [
     'puckets'=>'الباقات',
     'save'=>'حفظ',
     'add_puckets'=>'إضافة باقة',
-    'oky'=>'موافق'
+    'oky'=>'موافق',
+    'settings'=>'الإعدادات',
+    'puckets'=>'الباقات',
+    'title'=>'العنوان',
+    'description'=>'الوصف',
+    'discount'=>'الحسم',
+    'price'=>'السعر',
+    'created'=>'التاريخ',
+    'action'=>'المعالجة',
+    'pucket'=>'الباقة',
+    'add_service'=>'إضافة خدمة'
+
 ];

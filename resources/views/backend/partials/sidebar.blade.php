@@ -51,7 +51,7 @@
             <!-- Apps & Pages -->
 
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Settings</span>
+            <span class="menu-header-text">{{__('cp.settings')}}</span>
         </li>
 
         <li class="menu-item {{ request()->is(app()->getLocale().'/admin/settings*') ? 'active' : '' }}">
@@ -67,7 +67,7 @@
             </a>
         </li>
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Services</span>
+            <span class="menu-header-text">{{__('cp.services')}}</span>
         </li>
 
         <li class="menu-item {{ request()->is(app()->getLocale().'/admin/services/index') ? 'active' : '' }}">
@@ -86,7 +86,7 @@
             <span class="menu-header-text">Members</span>
         </li> --}}
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Puckets</span>
+            <span class="menu-header-text">{{__('cp.puckets')}}</span>
         </li>
 
         <li class="menu-item {{ request()->is(app()->getLocale().'/admin/puckets*') ? 'active' : '' }}">
