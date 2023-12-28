@@ -126,7 +126,6 @@ class PucketController extends Controller
         $commonRules = [
             'title_ar' => 'required|unique:puckets,title->ar,'. $pucketId,
             'title_en' => 'required|unique:puckets,title->en,'. $pucketId,
-            'pucket_key' => 'required',
         ];
 
         // Add the 'required' rule for 'image' for store operation

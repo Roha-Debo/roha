@@ -304,7 +304,10 @@ return [
     'request_service'=>'Request a Service',
     'file1_description'=>'Many media production companies, designers and professional developers in tactics are ready to work on your project',
     'file2_description'=>'Many media production companies, designers and professional developers in tactics are ready to work on your project',
-    'puckets'=>'Puckets'
+    'puckets'=>'Puckets',
+    'save'=>'Save',
+    'add_puckets'=>'Add Puckets',
+    'oky'=>'ok',
 
 ];
 

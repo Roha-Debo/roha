@@ -26,7 +26,37 @@
                        </thead>
                    </table>
                </div>
+               <!-- Offcanvas to add new user -->
+               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAddPucket" aria-labelledby="offcanvasAddPucketLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasAddPucketLabel" class="offcanvas-title">Add Pucket</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body mx-0 flex-grow-0">
+                    <form class="add-new-pucket pt-0" id="addNewPucketForm" enctype="multipart/form-data">
+                        <input type="hidden" name="id" id="pucket_id">
+                        <div class="mb-3">
+                            <label class="form-label" for="add-pucket-title">{{__('cp.title_ar')}}</label>
+                            <input type="text" class="form-control" id="add-pucket-title-ar" placeholder="{{__('cp.title_ar')}}" name="title_ar" aria-label="{{__('cp.title_ar')}}" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="add-pucket-title">{{__('cp.title_en')}}</label>
+                            <input type="text" class="form-control" id="add-pucket-title-en" placeholder="{{__('cp.title_en')}}" name="title_en" aria-label="{{__('cp.title_en')}}" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="add-pucket-description">{{__('cp.description_ar')}}</label>
+                            <input type="text" class="form-control" id="add-pucket-description-ar" placeholder="{{__('cp.description_ar')}}" name="description_ar" aria-label="{{__('cp.description_ar')}}" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="add-pucket-description">{{__('cp.description_en')}}</label>
+                            <input type="text" class="form-control" id="add-pucket-description-en" placeholder="{{__('cp.description_en')}}" name="description_en" aria-label="{{__('cp.description_en')}}" />
+                        </div>
 
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">{{__('cp.save')}}</button>
+                        <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">{{__('cp.cancel')}}</button>
+                    </form>
+                </div>
+            </div>
            </div>
        </div>
     </div>

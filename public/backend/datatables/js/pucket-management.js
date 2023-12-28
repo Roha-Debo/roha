@@ -149,156 +149,7 @@ $(function () {
             },
             // Buttons with Dropdown
             buttons: [
-                {
-                    extend: 'collection',
-                    className: 'btn btn-label-primary dropdown-toggle mx-3',
-                    text: '<i class="ti ti-logout rotate-n90 me-2"></i>' + exportFile,
-                    buttons: [
-                        {
-                            extend: 'print',
-                            title: 'countries',
-                            text: '<i class="ti ti-printer me-2" ></i>Print',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be print
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList !== undefined && item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('pucket-title')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            },
-                            customize: function (win) {
-                                //customize print view for dark
-                                $(win.document.body)
-                                    .css('color', config.colors.headingColor)
-                                    .css('border-color', config.colors.borderColor)
-                                    .css('background-color', config.colors.body);
-                                $(win.document.body)
-                                    .find('table')
-                                    .addClass('compact')
-                                    .css('color', 'inherit')
-                                    .css('border-color', 'inherit')
-                                    .css('background-color', 'inherit');
-                            }
-                        },
-                        {
-                            extend: 'csv',
-                            title: 'countries',
-                            text: '<i class="ti ti-file-text me-2" ></i>Csv',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be print
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('pucket-title')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            extend: 'excel',
-                            title: 'countries',
-                            text: '<i class="ti ti-file-spreadsheet me-2"></i>Excel',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be display
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('country-name')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            extend: 'pdf',
-                            title: 'countries',
-                            text: '<i class="ti ti-file-text me-2"></i>Pdf',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be display
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('country-name')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            extend: 'copy',
-                            title: 'countries',
-                            text: '<i class="ti ti-copy me-1" ></i>Copy',
-                            className: 'dropdown-item',
-                            exportOptions: {
-                                columns: [1, 2, 3, 4],
-                                // prevent avatar to be copy
-                                format: {
-                                    body: function (inner, coldex, rowdex) {
-                                        if (inner.length <= 0) return inner;
-                                        var el = $.parseHTML(inner);
-                                        var result = '';
-                                        $.each(el, function (index, item) {
-                                            // if (item.classList.contains('user-name')) {
-                                            //     result = result + item.lastChild.textContent;
-                                            // } else result = result + item.innerText;
-                                            if (item && item.classList && item.classList.contains('country-name')) {
-                                                result = result + item.lastChild.textContent;
-                                            } else result = result + item.innerText;
-                                        });
-                                        return result;
-                                    }
-                                }
-                            }
-                        }
-                    ]
-                },
+
                 {
                     text: '<i class="ti ti-plus me-0 me-sm-1"></i><span class="d-none d-sm-inline-block">' + addNewTranslation + '</span>',
                     className: 'add-new btn btn-primary',
@@ -314,7 +165,7 @@ $(function () {
                     display: $.fn.dataTable.Responsive.display.modal({
                         header: function (row) {
                             var data = row.data();
-                            return 'Details of ' + data['name'];
+                            return 'Details of ' + data['title'];
                         }
                     }),
                     type: 'column',
@@ -490,7 +341,7 @@ $(function () {
             autoFocus: new FormValidation.plugins.AutoFocus()
         }
     }).on('core.form.valid', function () {
-        var formData = new FormData(addNewCountryForm);
+        var formData = new FormData(addNewPucketForm);
         // adding or updating country when form successfully validate
         $.ajax({
             // data: $('#addNewcountryForm').serialize(),
