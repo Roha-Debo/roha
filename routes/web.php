@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\PucketController;
+use App\Http\Controllers\Admin\PucketServiceController;
 use App\Http\Controllers\publicsite\SettingsiteController as PublicsiteSettingsiteController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -55,6 +57,11 @@ Route::group(
         Route::resource('/settings', SettingController::class);
         Route::resource('/services', ServiceController::class);
         Route::get('/api-services', [ServiceController::class, 'services_api'])->name('services.api');
+
+        Route::resource('/puckets', PucketController::class);
+        Route::get('/api-puckets', [PucketController::class, 'puckets_api'])->name('puckets.api');
+        Route::resource('/pucketServices', PucketServiceController::class);
+
 
 
         // Route::get('/api-cases', [SettingController::class, 'cases_api'])->name('cases.api');

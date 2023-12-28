@@ -82,9 +82,28 @@
                 <div>{{__('cp.addServices')}}</div>
             </a>
         </li>
-        <li class="menu-header small text-uppercase">
+        {{-- <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Members</span>
+        </li> --}}
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Puckets</span>
         </li>
+
+        <li class="menu-item {{ request()->is(app()->getLocale().'/admin/puckets*') ? 'active' : '' }}">
+            <a href="{{route('admin.puckets.index')}}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-settings"></i>
+                <div>{{__('cp.puckets')}}</div>
+            </a>
+        </li>
+        <li class="menu-item {{ request()->is(app()->getLocale().'/admin/pucketServices*') ? 'active' : '' }}">
+            <a href="{{route('admin.pucketServices.index')}}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-settings"></i>
+                <div>{{__('cp.services')}}</div>
+            </a>
+        </li>
+        {{-- <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Members</span>
+        </li> --}}
 
         {{-- <li class="menu-item {{ request()->is(app()->getLocale().'/admin/users*') ? 'active' : '' }}">
             <a href="{{route('admin.users.index')}}" class="menu-link">
