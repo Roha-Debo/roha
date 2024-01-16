@@ -16,6 +16,8 @@ use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Fortify;
+use App\Models\Setting;
+
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -44,10 +46,19 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
             public function toResponse($request)
             {
+
                 if ($request->is('admin') || $request->is('admin/*')) {
                     return redirect('/admin/login');
                 } else {
-                    return redirect('/login');
+                    $settings = Setting::with('media')->first();
+                    $settings['section1_title'] = optional($settings)->section1_title;
+                    $settings['section1_description'] = optional($settings)->section1_description;
+                    $settings['title_text'] = optional($settings)->title_text;
+                    $settings['mete_description'] = optional($settings)->mete_description;
+                    $settings['mete_keywords'] =optional($settings)->mete_keywords;
+                    return view('auth.login',compact('settings'));
+
+                   // return redirect('/login');
                 }
 
             }
@@ -81,7 +92,14 @@ class FortifyServiceProvider extends ServiceProvider
             });
         }else{
             Fortify::loginView(function () {
-                return view('auth.login');
+                $settings = Setting::with('media')->first();
+                $settings['section1_title'] = optional($settings)->section1_title;
+                $settings['section1_description'] = optional($settings)->section1_description;
+                $settings['title_text'] = optional($settings)->title_text;
+                $settings['mete_description'] = optional($settings)->mete_description;
+                $settings['mete_keywords'] =optional($settings)->mete_keywords;
+                return view('auth.login',compact('settings'));
+                //return view('auth.login');
             });
         }
     }
