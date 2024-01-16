@@ -45,6 +45,7 @@
     @include('frontend.partials.header')
 
     @yield('main')
+    @yield('login')
 
 
     @include('frontend.partials.footer')

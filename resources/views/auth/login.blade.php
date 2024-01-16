@@ -1,24 +1,7 @@
 @extends('frontend.partials.master')
 
 @section('login')
-<div class="container">
-    {{-- {{$settings}} --}}
-    <div class="dividers"></div>
-    <div class="row wow fadeInUp" data-wow-duration="2.5s" data-wow-offset="50" style="visibility: visible;">
-        <div class="col-md-12 section order-2 order-md-0" data-wow-duration="2.5s" data-wow-offset="50">
-            <a class="link" href="#">
-                
-                <img class="img wow zoomIn"
-                src="{{ optional($settings->getMedia('section1_image')->first())->getUrl() ?? asset('publicsite/images/01.jpg') }}"
-                class="w-100" alt="img wow zoomIn">
-           
-            </a>
-        </div>
-    </div>
-    <div class="dividers"></div>
 
-
-</div>
 <div class="container">
         <div class="dividers"></div>
             <div class="breadcrumb-account login-page">
@@ -66,10 +49,7 @@
             </div>
     
     
-        </div>
-
-        </div>
-        </div>
+</div>
 @endsection
 
 
