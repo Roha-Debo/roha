@@ -12,6 +12,17 @@
                     <div class="uk-hidden-small">
                    
                         <ul class="list-account ajax-login">
+                        <li><a href="login">{{__('cp.login')}}</a></li>
+                        <li><a href="register">تسجيل جديد</a></li>
+                        
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <li class="lang">
+                                    <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                        <span class="align-middle">{{ $properties['native'] }}</span>
+                                        <i class="uk-icon-fa"></i>
+                                    </a>
+                                </li>
+                            @endforeach                               
 
                         </ul><!--// user menu  -->
                         <ul class="navbar-menu">
@@ -22,14 +33,6 @@
                             <li><a href="#">عن تكتيك</a></li>
                             <li><a href="#">{{__('cp.employment')}}</a></li>
                             <li><a href="#">اتصل بنا</a></li>
-                         
-                             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                <li>
-                                    <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                        <span class="align-middle">{{ $properties['native'] }}</span>
-                                    </a>
-                                </li>
-                            @endforeach
                         
                         </ul>
                     </div><!--// navbar -->

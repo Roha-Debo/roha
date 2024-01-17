@@ -265,6 +265,7 @@ return [
     'discount' => 'Discount',
 
 
+
     'form'=>'Form',
     'dashboard'=>'Dashboard',
     'users'=>'Users',
@@ -309,7 +310,15 @@ return [
     'add_puckets'=>'Add Puckets',
     'oky'=>'ok',
     'pucket'=>'Pucket',
-    'add_service'=>'Add Service'
+    'add_service'=>'Add Service',
+    
+    'go_to_your_account'=>'go to your account',
+    'login'=>'login',
+    'you_do_not_have_account?'=>'you do not have account?',
+    'register_now'=>'register now',
+    'username_or_email'=>'username or email',
+    'remember_me'=>'remember me',
+    'forgot_password'=>'forgot_password'
 
 ];
 

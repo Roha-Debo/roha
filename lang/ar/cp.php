@@ -78,6 +78,15 @@ return [
     'created'=>'التاريخ',
     'action'=>'المعالجة',
     'pucket'=>'الباقة',
-    'add_service'=>'إضافة خدمة'
+    'add_service'=>'إضافة خدمة',
+
+    'go_to_your_account'=>'الدخول لحسابك',
+    'login'=>'دخول',
+    'you_do_not_have_account?'=>'ليس لديك حساب؟',
+    'register_now'=>'سجل الآن',
+    'username_or_email'=>'اسم المستخدم أو الايميل',
+    'password'=>'كلمة المرور',
+    'remember_me'=>'تذكرني المرة القادمة',
+    'forgot_password'=>'نسيت كلمة المرور'
 
 ];

@@ -11,6 +11,10 @@ use App\Http\Controllers\publicsite\SettingsiteController as PublicsiteSettingsi
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Models\Cases;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +45,15 @@ Route::group(
         //     return view('frontend.main');
         // });
         Route::resource('/', PublicsiteSettingsiteController::class);
+        Route::get('register', [RegisteredUserController::class, 'create'])
+        ->name('register');
+
+Route::post('register', [RegisteredUserController::class, 'store']);
+
+        Route::get('login', [AuthenticatedSessionController::class, 'create'])
+        ->name('login');
+
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::middleware(['auth:admin'])->prefix('admin')->as('admin.')->group(function () {
 

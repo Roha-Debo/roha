@@ -46,6 +46,7 @@
 
     @yield('main')
     @yield('login')
+    @yield('register')
 
 
     @include('frontend.partials.footer')
