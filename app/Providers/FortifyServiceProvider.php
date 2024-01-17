@@ -17,6 +17,10 @@ use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Fortify;
 use App\Models\Setting;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Illuminate\Support\Facades\Route;
+
+
 
 
 class FortifyServiceProvider extends ServiceProvider
@@ -26,7 +30,7 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        Fortify::ignoreRoutes();
+        // $this->configureRoutes();
         $request = request();
         if ($request->is('admin') || $request->is('admin/*')) {
             Config::set('fortify.guard', 'admin');
@@ -71,6 +75,7 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Fortify::ignoreRoutes();
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);

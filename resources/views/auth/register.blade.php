@@ -38,7 +38,7 @@
                     <div class="form-group field-signupform-username required">
 
                         <input type="text" id="first_name" class="uk-form-large uk-width-1-1 form-control"
-                               name="first_name" value="" required autofocus placeholder="الاسم الأول">
+                               name="first_name" value="" required autofocus placeholder="{{__('cp.first_name')}}">
 
 
 
@@ -50,7 +50,7 @@
                     <div class="form-group field-signupform-username required">
 
                         <input type="text" id="last_name" class="uk-form-large uk-width-1-1 form-control"
-                               name="last_name" value="" required autofocus placeholder="الاسم الأخير">
+                               name="last_name" value="" required autofocus placeholder="{{__('cp.last_name')}}">
 
 
 
@@ -63,7 +63,7 @@
                     
                         <div class="form-group field-signupform-phone">
                             <input type="number" id="phone" class="uk-form-large uk-width-1-1" name="phone"
-                                   placeholder="رقم الجوال" value="">
+                                   placeholder="{{__('cp.phone')}}" value="">
                         </div>
 
 
@@ -75,7 +75,7 @@
                 <div class="uk-form-row">
                     <div class="form-group field-signupform-email required">
                         <input type="email" id="email" class="uk-form-large uk-width-1-1 form-control" name="email"
-                               value="" required placeholder="البريد الالكترونى">
+                               value="" required placeholder="{{__('cp.email')}}">
                     </div>
 
 
@@ -87,7 +87,7 @@
                     <div class="form-group field-signupform-password required">
 
                         <input id="password" type="password" class="uk-form-large uk-width-1-1 form-control"
-                               name="password" required placeholder="كلمة المرور">
+                               name="password" required placeholder="{{__('cp.password')}}">
 
 
 
@@ -100,7 +100,7 @@
                     <div class="form-group field-signupform-terms required">
 
                         <input id="password-confirm" type="password" class="uk-form-large uk-width-1-1 form-control"
-                               name="password_confirmation" required placeholder="تأكيد كلمة المرور">
+                               name="password_confirmation" required placeholder="{{__('cp.password_confirmation')}}">
 
                         <div class="help-block"></div>
                     </div>

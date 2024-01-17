@@ -93,5 +93,11 @@ return [
     'take_the_first_steps_to_your_success_and_distinction'=>'ابدأ أولى خطوات نجاحك وتميزك',
     'you_have_account_in_tactic'=>'لديك حساب في تكتيك قم',
     'to_login'=>'بتسجيل الدخول',
+    'email'=>'البريد الالكتروني',
+    'password_confirmation'=>'تأكيد كلمة المرور',
+    'phone'=>'رقم الجوال',
+    'first_name'=>'الاسم الأول',
+    'last_name'=>'الاسم الأخير',
+
 
 ];

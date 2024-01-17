@@ -324,7 +324,10 @@ return [
     'take_the_first_steps_to_your_success_and_distinction'=>'Take the first steps to your success and distinction',
     'you_have_account_in_tactic'=>'you have account in tactic',
     'to_login'=>'login',
-
+    'email'=>'email',
+    'password_confirmation'=>'password confirmation',
+    'phone'=>'phone',
+    'first_name'=>'first name',
 ];
 
 
