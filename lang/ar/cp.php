@@ -87,6 +87,11 @@ return [
     'username_or_email'=>'اسم المستخدم أو الايميل',
     'password'=>'كلمة المرور',
     'remember_me'=>'تذكرني المرة القادمة',
-    'forgot_password'=>'نسيت كلمة المرور'
+    'forgot_password'=>'نسيت كلمة المرور',
+    'register'=>'تسجيل جديد',
+    'create_new_account_in_tactic'=>'إنشاء حساب جديد في تكتيك',
+    'take_the_first_steps_to_your_success_and_distinction'=>'ابدأ أولى خطوات نجاحك وتميزك',
+    'you_have_account_in_tactic'=>'لديك حساب في تكتيك قم',
+    'to_login'=>'بتسجيل الدخول',
 
 ];
