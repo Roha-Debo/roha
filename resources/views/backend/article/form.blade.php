@@ -17,10 +17,11 @@
             height: 200px; /* Larger default height */
             resize: vertical; /* Allows vertical resizing */
         }
-</style>
+</style> 
 
 
 <body>
+
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
     <div class="content-wrapper">
