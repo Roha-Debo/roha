@@ -6,14 +6,14 @@
         <div class="dividers"></div>
         <div class="uk-container uk-container-center">
         <div class="breadcrumb-account register-page">
-            <h1>إنشاء حساب جديد في تكتيك</h1>
-            <p>إبدأ أولى خطوات نجاحك وتميزك</p>
-            <p class="uk-margin-top"> لديك حساب في تكتيك قم <a href="login.html">بتسجيل الدخول</a></p>
+            <h1>{{__('cp.create_new_account_in_tactic')}}</h1>
+            <p>{{__('cp.take_the_first_steps_to_your_success_and_distinction')}}</p>
+            <p class="uk-margin-top">{{__('cp.you_have_account_in_tactic')}}<a href="login">  {{__('cp.to_login')}}</a></p>
         </div>
 
 
         <div class="uk-container-center container-small uk-margin-large-top uk-margin-large-bottom">
-                        <h1 class="title-site uk-text-center uk-margin-bottom">تسجيل جديد</h1>
+                        <h1 class="title-site uk-text-center uk-margin-bottom">{{__('cp.register')}}</h1>
 
             <form id="form-signup" class="uk-form" method="POST" action="http://127.0.0.1:8000/register">
                 <input type="hidden" name="_token" value="2TwyOejgtVnpJKtdwj6W3rX5WtRSpmHIEbpKIKxt">  

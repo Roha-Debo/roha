@@ -13,7 +13,7 @@
                    
                         <ul class="list-account ajax-login">
                         <li><a href="login">{{__('cp.login')}}</a></li>
-                        <li><a href="register">تسجيل جديد</a></li>
+                        <li><a href="register">{{__('cp.register')}}</a></li>
                         
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li class="lang">

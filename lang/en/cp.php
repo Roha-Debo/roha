@@ -318,7 +318,12 @@ return [
     'register_now'=>'register now',
     'username_or_email'=>'username or email',
     'remember_me'=>'remember me',
-    'forgot_password'=>'forgot_password'
+    'forgot_password'=>'forgot_password',
+    'register'=>'register',
+    'create_new_account_in_tactic'=>'create new account in tactic',
+    'take_the_first_steps_to_your_success_and_distinction'=>'Take the first steps to your success and distinction',
+    'you_have_account_in_tactic'=>'you have account in tactic',
+    'to_login'=>'login',
 
 ];
 
