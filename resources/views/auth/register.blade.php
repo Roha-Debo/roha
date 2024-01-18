@@ -15,12 +15,13 @@
         <div class="uk-container-center container-small uk-margin-large-top uk-margin-large-bottom">
                         <h1 class="title-site uk-text-center uk-margin-bottom">{{__('cp.register')}}</h1>
 
-            <form id="form-signup" class="uk-form" method="POST" action="http://127.0.0.1:8000/register">
-                <input type="hidden" name="_token" value="2TwyOejgtVnpJKtdwj6W3rX5WtRSpmHIEbpKIKxt">  
+            <form id="form-signup" class="uk-form" method="POST" action="{{ route('register') }}">
+                @csrf
+                {{-- <input type="hidden" name="_token" value="2TwyOejgtVnpJKtdwj6W3rX5WtRSpmHIEbpKIKxt">   --}}
                 <div class="uk-form-row">
                     <div class="form-group field-signupform-city required">
 
-                        <select id="country" class="uk-form-large uk-width-1-1" name="country_id">
+                        <select id="country" class="uk-form-large uk-width-1-1" name="type">
                             <option value="">نوع العميل</option>
                                                         <option value="1">فرد</option>
                                                         <option value="2">مؤسسة</option>

@@ -19,6 +19,8 @@ use Laravel\Fortify\Fortify;
 use App\Models\Setting;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Contracts\RegisterResponse;
+use Laravel\Fortify\Contracts\RegisterViewResponse;
 
 
 
@@ -31,11 +33,27 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         // $this->configureRoutes();
+        app()->instance(RegisterViewResponse::class, new class implements RegisterViewResponse {
+            public function toResponse($request)
+            {
+                $settings = Setting::with('media')->first();
+                $settings['section1_title'] = optional($settings)->section1_title;
+                $settings['section1_description'] = optional($settings)->section1_description;
+                $settings['title_text'] = optional($settings)->title_text;
+                $settings['mete_description'] = optional($settings)->mete_description;
+                $settings['mete_keywords'] =optional($settings)->mete_keywords;
+                return view('auth.register',compact('settings'));
+            }
+        });
         $request = request();
         if ($request->is('admin') || $request->is('admin/*')) {
             Config::set('fortify.guard', 'admin');
             Config::set('fortify.prefix', 'admin');
         }
+        // else {
+        //     Config::set('fortify.guard', 'web');
+        //     Config::set('fortify.prefix', 'web');
+        // }
 
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
             public function toResponse($request)
@@ -44,6 +62,16 @@ class FortifyServiceProvider extends ServiceProvider
                     return redirect()->intended('/admin');
                 }else {
                     return redirect()->intended('/dashboard');
+                }
+            }
+        });
+        $this->app->instance(RegisterResponse::class, new class implements RegisterResponse {
+            public function toResponse($request)
+            {
+                if ($request->user('admin')) {
+                    return redirect()->intended('/admin/login');
+                }else {
+                    return redirect()->intended('/login');
                 }
             }
         });
@@ -75,7 +103,7 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Fortify::ignoreRoutes();
+      //  Fortify::ignoreRoutes();
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);

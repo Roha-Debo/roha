@@ -12,8 +12,17 @@
                     <div class="uk-hidden-small">
                    
                         <ul class="list-account ajax-login">
+                            @if (Auth::guard('web'))
+                                <a href="#">
+                                 <ul>{{Auth::user()->username}}
+                                <li><a href="/logout">logout</a></li>
+                                </ul>
+
+                                </a>
+                        @else
                         <li><a href="login">{{__('cp.login')}}</a></li>
                         <li><a href="register">{{__('cp.register')}}</a></li>
+                        @endif
                         
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li class="lang">

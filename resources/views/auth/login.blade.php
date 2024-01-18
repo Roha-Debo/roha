@@ -12,8 +12,10 @@
             <div class="uk-container-center container-small uk-margin-large-top">
                 <h1 class="title-site uk-text-center uk-margin-bottom">{{__('cp.login')}}</h1>
     
-                <form id="login-form" method="POST" action="login">
-                    <input type="hidden" name="_token" value="2TwyOejgtVnpJKtdwj6W3rX5WtRSpmHIEbpKIKxt">                <div class="uk-form-row">
+                <form id="login-form" method="POST" action="{{route('login')}}">
+                    @csrf
+                    {{-- <input type="hidden" name="_token" value="2TwyOejgtVnpJKtdwj6W3rX5WtRSpmHIEbpKIKxt">          --}}
+                           <div class="uk-form-row">
                         <div class="form-group field-loginform-identity required">
                             <input type="text" id="username" class="uk-form-large uk-width-1-1 uk-text-center form-control" name="email" value="" required autofocus placeholder="{{__('cp.username_or_email')}}">
                             <div class="help-block">

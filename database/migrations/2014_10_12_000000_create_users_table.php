@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('username')->unique();
+            $table->enum('type',['فرد','مؤسسة','شركة'])->nullable()->default('فرد');
             $table->string('phone')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

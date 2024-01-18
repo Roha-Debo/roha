@@ -5,6 +5,7 @@ namespace Tests\Feature\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Log;
 
 class RegistrationTest extends TestCase
 {
@@ -19,6 +20,7 @@ class RegistrationTest extends TestCase
 
     public function test_new_users_can_register(): void
     {
+        log::info('kk: registration');
         $response = $this->post('/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
