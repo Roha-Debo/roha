@@ -15,7 +15,8 @@
         <div class="uk-container-center container-small uk-margin-large-top uk-margin-large-bottom">
                         <h1 class="title-site uk-text-center uk-margin-bottom">{{__('cp.register')}}</h1>
 
-            <form id="form-signup" class="uk-form" method="POST" action="http://127.0.0.1:8000/register">
+            <form id="form-signup" class="uk-form" method="POST" action="http://127.0.0.1:8000/en/register">
+                @csrf
                 <input type="hidden" name="_token" value="2TwyOejgtVnpJKtdwj6W3rX5WtRSpmHIEbpKIKxt">  
                 <div class="uk-form-row">
                     <div class="form-group field-signupform-city required">
@@ -109,15 +110,15 @@
                 <div class="terms-links uk-form-row">
                     <div class="form-group field-signupform-terms required">
 
-                        <label><input type="checkbox" required name="terms" id="term" value="1"> الموافقة على
-                            <a href="#" data-toggle="modal" data-target="#terms">الشروط والاحكام</a></label>
+                        <label><input type="checkbox" required name="terms" id="term" value="1"> {{__('cp.agree_to')}}
+                            <a href="#" data-toggle="modal" data-target="#terms">{{__('cp.the_terms_and_conditions')}}</a></label>
 
                         <div class="help-block"></div>
                     </div>
                 </div>
                 <div class="uk-form-row">
                     <button type="submit" class="uk-button-large uk-button uk-button-primary uk-width-1-1"
-                            id="signup_btn">سجّل
+                            id="signup_btn">{{__('cp.register')}}
                     </button>
                 </div>
                 <div class="alert alert-danger" id="error-msg" style="display: none;margin-top: 10px"></div>
@@ -129,7 +130,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="termsLabel">الشروط والاحكام</h4>
+                                <h4 class="modal-title" id="termsLabel">{{__('cp.the_terms_and_conditions')}}</h4>
                             </div>
                             <div class="modal-body">
                                 <p><strong>ضوابط وشروط وأحكام المستخدم لمنصة تكتيك</strong></p>
@@ -415,9 +416,9 @@
                 </div>
 
             </form>
-            <div class="uk-margin-large uk-text-center">
+            <!-- <div class="uk-margin-large uk-text-center">
                 <a href="reset.html">نسيت كلمة المرور؟</a>
-            </div>
+            </div> -->
 
         </div>
 

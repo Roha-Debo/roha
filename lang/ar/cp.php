@@ -98,6 +98,8 @@ return [
     'phone'=>'رقم الجوال',
     'first_name'=>'الاسم الأول',
     'last_name'=>'الاسم الأخير',
+    'the_terms_and_conditions'=>'الشروط والأحكام',
+    'agree_to'=>'الموافقة على',
 
 
 ];

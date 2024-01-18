@@ -328,6 +328,9 @@ return [
     'password_confirmation'=>'password confirmation',
     'phone'=>'phone',
     'first_name'=>'first name',
+    'last_name'=>'last name',
+    'the_terms_and_conditions'=>'the terms and conditions',
+    'agree_to'=>'agree to',
 ];
 
 

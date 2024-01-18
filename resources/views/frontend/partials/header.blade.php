@@ -12,8 +12,8 @@
                     <div class="uk-hidden-small">
                    
                         <ul class="list-account ajax-login">
-                        <li><a href="login">{{__('cp.login')}}</a></li>
-                        <li><a href="register">{{__('cp.register')}}</a></li>
+                        <li><a href="{{route('login')}}">{{__('cp.login')}}</a></li>
+                        <li><a href="{{route('register')}}">{{__('cp.register')}}</a></li>
                         
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li class="lang">
