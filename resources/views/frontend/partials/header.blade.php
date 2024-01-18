@@ -20,8 +20,8 @@
 
                                 </a>
                         @else
-                        <li><a href="login">{{__('cp.login')}}</a></li>
-                        <li><a href="register">{{__('cp.register')}}</a></li>
+                        <li><a href="{{route('login')}}">{{__('cp.login')}}</a></li>
+                        <li><a href="{{route('register')}}">{{__('cp.register')}}</a></li>
                         @endif
                         
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)

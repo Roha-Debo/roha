@@ -42,6 +42,9 @@ if($input['type']== 1){
             'first_name' => $input['first_name'],
             'last_name' => $input['last_name'],
             'username' => $input['first_name'].$input['last_name'],
+            'first_name' => $input['first_name'],
+            'last_name' => $input['last_name'],
+            'phone' => $input['phone'],
             'email' => $input['email'],
             'phone' => $input['phone'],
             

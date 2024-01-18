@@ -87,7 +87,7 @@ return [
     |
     */
 
-    'prefix' => '',
+    'prefix' => app()->getLocale(),
 
     'domain' => null,
 
