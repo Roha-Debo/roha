@@ -11,6 +11,7 @@ use App\Http\Controllers\publicsite\SettingsiteController as PublicsiteSettingsi
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Models\Cases;
+use App\Models\Setting;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -64,6 +65,16 @@ Route::group(
         //     return view('frontend.main');
         // });
         Route::resource('/', PublicsiteSettingsiteController::class)->middleware('auth:web');
+        Route::get('/main-profile', function(){
+            
+            $settings = Setting::with('media')->first();
+            $settings['section1_title'] = optional($settings)->section1_title;
+            $settings['section1_description'] = optional($settings)->section1_description;
+            $settings['title_text'] = optional($settings)->title_text;
+            $settings['mete_description'] = optional($settings)->mete_description;
+            $settings['mete_keywords'] =optional($settings)->mete_keywords;
+return view('profile.main-profile',compact('settings'));
+        })->name('main-profile');
 //         Route::get('register', [RegisteredUserController::class, 'create'])
 //         ->name('register');
 

@@ -12,10 +12,11 @@
                     <div class="uk-hidden-small">
                    
                         <ul class="list-account ajax-login">
-                            @if (Auth::guard('web'))
+                            @if (Auth::guard('web')!=null && Auth::guard('web')!=false)
                                 <a href="#">
-                                 <ul>{{Auth::user()->username}}
-                                <li><a href="/logout">logout</a></li>
+                                 <ul>{{optional(Auth::user())->username}}
+                                <li> <a href="#" id="logoutBtn">Logout</a></li>
+                                <li><a href="{{route('main-profile')}}">profile<a></li>
                                 </ul>
 
                                 </a>
@@ -70,3 +71,47 @@
     </div>
 </div>
 </header>
+
+   
+
+<script>
+    // Assuming you have the logout route URL
+    var logoutUrl = "{{ route('logout') }}";
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var logoutBtn = document.getElementById('logoutBtn');
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+               
+                fetch(logoutUrl, {
+                    method: 'POST', // or 'GET' depending on your setup
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include CSRF token if needed
+                        'Content-Type': 'application/json',
+                    },
+        
+      
+  
+                    // You can add additional options like body, credentials, etc.
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the response or perform additional actions
+                    console.log(data);
+
+                    // Redirect to the desired page after successful logout
+                   
+                })
+                .catch(error => {
+                    // Handle errors
+                    console.error('Error:', error);
+                });
+            });
+        }
+    });
+</script>
+
+
+   
